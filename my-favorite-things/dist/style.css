@@ -1,0 +1,438 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #d288ff 27%, #8e4cf8 75%);
+}
+
+#card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#card #display {
+  width: 60%;
+  border-radius: 20px 0 0 20px;
+  background: rgba(178, 78, 255, 0.5);
+  -webkit-backdrop-filter: blur(30px) hue-rotate(20deg);
+          backdrop-filter: blur(30px) hue-rotate(20deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+#card #display > * {
+  text-align: center;
+}
+#card #display #art {
+  height: 200px;
+  margin: 0 auto;
+}
+#card #list {
+  width: 40%;
+  border-radius: 0 20px 20px 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+#card #list .item {
+  padding: 0 1em;
+  background: rgb(226, 183, 255);
+  transition: all 0.3s ease;
+}
+#card #list .item:first-of-type {
+  border-radius: 0 20px 0 0;
+}
+#card #list .item:last-of-type {
+  border-radius: 0 0 20px 0;
+}
+#card #list .item.is-active {
+  background: rgba(39, 49, 255, 0.5);
+  -webkit-backdrop-filter: blur(30px) hue-rotate(20deg);
+          backdrop-filter: blur(30px) hue-rotate(20deg);
+  transition: all 0.3s ease;
+}
+#card #list .item:hover {
+  cursor: pointer;
+}
+.card {
+  width: 190px;
+  height: 254px;
+  background: rgba(211, 211, 211, 0.199);
+  position: absolute;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+#c1 {
+  background-color: rgb(232, 79, 194);
+}
+
+#c2 {
+  background-color: rgb(178, 85, 221);
+}
+
+#c3 {
+  background-color: rgb(191, 0, 255);
+}
+
+#c4 {
+  background-color: rgb(167, 40, 179);
+}
+
+.main:hover #c1 {
+  transform: translateX(-100px) rotate(-40deg);
+}
+
+.main:hover #c2 {
+  transform: translateX(-50px) rotate(-30deg);
+}
+
+.main:hover #c3 {
+  transform: translateX(0) rotate(-20deg);
+}
+
+.main:hover #c4 {
+  transform: translateX(50px) rotate(-10deg);
+}
+
+#c1:hover {
+  transform: translateX(-150px) rotate(0deg) !important;
+}
+
+#c2:hover {
+  transform: translateX(-100px) rotate(0deg) !important;
+}
+
+#c3:hover {
+  transform: translateX(-50px) rotate(0deg) !important;
+}
+
+#c4:hover {
+  transform: translateX(50px) rotate(0deg) !important;
+}
+
+.main {
+  display: grid;
+  height: 50vmax;
+  place-items: center;
+}
+/* The loader container */
+.bubble {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 20%;
+  box-shadow: inset 0 0 25px rgba (255, 255, 255, 0.25);
+  animation: animate_4010 8s ease-in-out infinite;
+}
+
+.bubble:nth-child(2) {
+  position: relative;
+  zoom: 0.45;
+  left: -10px;
+  top: -100px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(3) {
+  position: relative;
+  zoom: 0.45;
+  right: -80px;
+  top: -300px;
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(4) {
+  position: relative;
+  zoom: 0.35;
+  left: -120px;
+  bottom: -200px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(5) {
+  position: relative;
+  zoom: 0.5;
+  left: 0px;
+  top: 200px;
+  animation-delay: -5s;
+}
+
+@keyframes animate_4010 {
+  0%,100% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid #0fb4ff;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid #ff4484;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(3) {
+  inset: 10px;
+  border-top: 15px solid #ffeb3b;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(4) {
+  inset: 30px;
+  border-left: 15px solid #ff4484;
+  filter: blur(12px);
+}
+
+.bubble span:nth-child(5) {
+  inset: 10px;
+  border-bottom: 10px solid #fff;
+  filter: blur(8px);
+  transform: rotate(330deg);
+}
+.loader {
+  height: 70px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 40vh;
+  position: absolute;
+  width: 20vw;
+  bottom: 10%;
+  right: 40%;
+  transition: all 1s;
+}
+
+.bar {
+  height: 5px;
+  width: 12px;
+  animation-duration: 0.45s;
+  animation-name: changeHeight;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.red {
+  background-color: #E50000;
+  box-shadow: 1px 1px 10px #E50000;
+  animation-delay: 0.10s;
+}
+
+.orange {
+  background-color: #FF8D00;
+  box-shadow: 1px 1px 10px #FF8D00;
+  animation-delay: 0.20s;
+}
+
+.yellow {
+  background-color: #FFEE00;
+  box-shadow: 1px 1px 10px #FFEE00;
+  animation-delay: 0.25s;
+}
+
+.green {
+  background-color: #008121;
+  box-shadow: 1px 1px 10px #008121;
+  animation-delay: 0.30s;
+}
+
+.blue {
+  background-color: #004CFF;
+  box-shadow: 1px 1px 10px #004CFF;
+  animation-delay: 0.35s;
+}
+
+.violet {
+  background-color: #760188;
+  box-shadow: 1px 1px 10px #760188;
+  animation-delay: 0.40s;
+}
+
+@keyframes changeHeight {
+  from {
+    height: 5px;
+  }
+
+  to {
+    height: 40px;
+  }
+}
+.loader2 {
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 15vh;
+  position: absolute;
+  width: 20vw;
+  bottom: 10%;
+  right: 30%;
+  transition: all 1s;
+}
+
+.bar {
+  height: 5px;
+  width: 12px;
+  animation-duration: 0.45s;
+  animation-name: changeHeight;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.red {
+  background-color: #E50000;
+  box-shadow: 1px 1px 10px #E50000;
+  animation-delay: 0.10s;
+}
+
+.orange {
+  background-color: #FF8D00;
+  box-shadow: 1px 1px 10px #FF8D00;
+  animation-delay: 0.20s;
+}
+
+.yellow {
+  background-color: #FFEE00;
+  box-shadow: 1px 1px 10px #FFEE00;
+  animation-delay: 0.25s;
+}
+
+.green {
+  background-color: #008121;
+  box-shadow: 1px 1px 10px #008121;
+  animation-delay: 0.30s;
+}
+
+.blue {
+  background-color: #004CFF;
+  box-shadow: 1px 1px 10px #004CFF;
+  animation-delay: 0.35s;
+}
+
+.violet {
+  background-color: #760188;
+  box-shadow: 1px 1px 10px #760188;
+  animation-delay: 0.40s;
+}
+
+@keyframes changeHeight {
+  from {
+    height: 5px;
+  }
+
+  to {
+    height: 40px;
+  }
+}
+.loader3 {
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 15vh;
+  position: absolute;
+  width: 20vw;
+  bottom: 10%;
+  right: 35%;
+  transition: all 1s;
+}
+
+.bar {
+  height: 5px;
+  width: 12px;
+  animation-duration: 0.45s;
+  animation-name: changeHeight;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.red {
+  background-color: #E50000;
+  box-shadow: 1px 1px 10px #E50000;
+  animation-delay: 0.10s;
+}
+
+.orange {
+  background-color: #FF8D00;
+  box-shadow: 1px 1px 10px #FF8D00;
+  animation-delay: 0.20s;
+}
+
+.yellow {
+  background-color: #FFEE00;
+  box-shadow: 1px 1px 10px #FFEE00;
+  animation-delay: 0.25s;
+}
+
+.green {
+  background-color: #008121;
+  box-shadow: 1px 1px 10px #008121;
+  animation-delay: 0.30s;
+}
+
+.blue {
+  background-color: #004CFF;
+  box-shadow: 1px 1px 10px #004CFF;
+  animation-delay: 0.35s;
+}
+
+.violet {
+  background-color: #760188;
+  box-shadow: 1px 1px 10px #760188;
+  animation-delay: 0.40s;
+}
+
+@keyframes changeHeight {
+  from {
+    height: 5px;
+  }
+
+  to {
+    height: 40px;
+  }
+}
